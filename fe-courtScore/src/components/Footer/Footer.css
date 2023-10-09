@@ -1,0 +1,39 @@
+.footer-icon {
+  border-bottom: 1px solid #f3f5f7;
+  border-radius: 2%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+  font-weight: 400;
+  height: fit-content;
+}
+.footer-icon__container {
+  display: flex;
+  align-items: center;
+}
+.footer-icon__icon {
+  font-size: 24px;
+  border-radius: 80px;
+  background: #ffcb47;
+  color: #ffffff;
+}
+.footer-icon__text {
+  margin-left: 8px;
+  font-weight: 700;
+}
+.footer-icon__subtitle {
+  font-weight: 200;
+  margin: 8px 32px;
+}
+.footer-list {
+  margin-left: 32px;
+}
+.footer-list__list__item {
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 200;
+  padding: 4px;
+}
+.footer-register {
+  margin-right: 16px;
+}

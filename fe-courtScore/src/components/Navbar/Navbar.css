@@ -1,0 +1,24 @@
+.navbar-center {
+  display: flex;
+  align-self: center;
+  flex: 3;
+  justify-content: center;
+}
+.navbar-logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  margin-left: 8px;
+  align-items: center;
+  font-weight: 700;
+}
+.navbar-logo__icon {
+  font-size: 24px;
+  border-radius: 80px;
+  background: #ffcb47;
+  color: #ffffff;
+}
+.navbar-logo__btn {
+  font-size: 16px;
+}

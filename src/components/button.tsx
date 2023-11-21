@@ -21,14 +21,15 @@ const SecondaryButton = styled(PrimaryButton)`
 interface ButtonProps {
   primary?: boolean;
   onClick?: () => void;
+  customClass?: string;
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ primary, onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({ primary, onClick, children, customClass }) => {
   const ButtonComponent = primary ? PrimaryButton : SecondaryButton;
 
   return (
-    <ButtonComponent whileHover={{ scale: 1.1 }} onClick={onClick}>
+    <ButtonComponent className={customClass} whileHover={{ scale: 1.1 }} onClick={onClick}>
       {children}
     </ButtonComponent>
   );

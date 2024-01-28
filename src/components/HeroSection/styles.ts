@@ -6,7 +6,7 @@ export const HeroContainer = styled(motion.div)`
     color: ${props => props.theme.colors.primary};
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    max-width: 100vw;
     
     .hero-img{
         max-width: 100vw;

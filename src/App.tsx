@@ -7,6 +7,9 @@ import dark from "./styles/themes/dark";
 import usePersistedState from "./utils/usePersistedState";
 import { HeroSection } from "./components/HeroSection/HeroSection";
 import LiveResult from "./components/LiveResults/LiveResults";
+import { AboutSection } from "./components/AboutSection/AboutSection";
+import { Footer } from "./components/Footer/Footer";
+import { DownloadSection } from "./components/DownloadSection/DownloadSection";
 
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
       <Navbar toggleTheme={toggleTheme}></Navbar>
       <HeroSection></HeroSection>
       <LiveResult></LiveResult>
+      <AboutSection></AboutSection>
+      <DownloadSection></DownloadSection>
+      <Footer></Footer>
     </ThemeProvider>
   </>
   );

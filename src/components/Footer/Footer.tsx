@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { BiTennisBall } from "react-icons/bi";
-import "../Navbar/Navbar.css";
 import "./Footer.css";
 import Input from "../Input";
 import Button from "../button";
 import { breakpoints } from "../../constants/devices";
 
 const FooterComponent = styled(motion.footer)`
-  width: 100vw;
   background: #404e4d;
   color: #f3f5f7;
   padding: 16px;

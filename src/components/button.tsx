@@ -10,6 +10,10 @@ const PrimaryButton = styled(motion.button)`
   background: #41b467;
   border: none;
   cursor: pointer;
+
+  @media (max-width: 450px) { 
+    margin: 6px;
+  }
 `;
 
 const SecondaryButton = styled(PrimaryButton)`

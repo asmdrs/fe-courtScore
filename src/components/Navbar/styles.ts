@@ -31,9 +31,8 @@ export const NavbarComponent = styled(motion.nav)`
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.secondary};
   display: flex;
-  width: 100vw;
+  max-width: 100vw;
   @media (max-width: 450px) { 
-    width: 104vw;
   }
 `;
 

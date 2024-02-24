@@ -1,15 +1,13 @@
 import "./App.css";
-import { Navbar } from "./components/Navbar/Navbar";
 import GlobalStyle  from "./styles/global";
 import { ThemeProvider } from "styled-components";
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
 import usePersistedState from "./utils/usePersistedState";
-import { HeroSection } from "./components/HeroSection/HeroSection";
-import LiveResult from "./components/LiveResults/LiveResults";
-import { AboutSection } from "./components/AboutSection/AboutSection";
-import { Footer } from "./components/Footer/Footer";
-import { DownloadSection } from "./components/DownloadSection/DownloadSection";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from "./components/MainPage/MainPage";
+import LoginScreen from "./components/LoginScreen/LoginScreen";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 function App() {
@@ -22,12 +20,16 @@ function App() {
   <>
     <ThemeProvider theme={theme}>
       <GlobalStyle></GlobalStyle>
-      <Navbar toggleTheme={toggleTheme}></Navbar>
-      <HeroSection></HeroSection>
-      <LiveResult></LiveResult>
-      <AboutSection></AboutSection>
-      <DownloadSection></DownloadSection>
-      <Footer></Footer>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<MainPage toggleTheme={toggleTheme} />}
+          />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   </>
   );

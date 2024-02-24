@@ -21,6 +21,8 @@ interface InputProps {
   name: string;
   placeholder: string;
   children?: React.ReactNode;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string; 
 }
 
 const Input: React.FC<InputProps> = ({
@@ -29,6 +31,8 @@ const Input: React.FC<InputProps> = ({
   name,
   children,
   placeholder,
+  onChange,
+  value
 }) => {
   const TextInput = text ? TextInputComponent : NumberInputComponent;
 
@@ -38,6 +42,8 @@ const Input: React.FC<InputProps> = ({
       id={id}
       name={name}
       placeholder={placeholder}
+      onChange={onChange}
+      value={value}
       whileFocus={{
         border: "2px solid #41b467 !important",
         background:

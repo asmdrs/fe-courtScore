@@ -4,6 +4,7 @@ import Switch from 'react-switch';
 import { ThemeContext } from "styled-components";
 import React, { useContext } from 'react';
 import { CenterContainer, NavbarButton, NavbarComponent, NavbarLogo, SpanComponent } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const hoverAnimation = {
   scale: 1.1,
@@ -15,8 +16,15 @@ interface Props {
   toggleTheme():void;
 }
 
+
+
 export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
   const { colors, title } = useContext(ThemeContext);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/login")
+  }
 
   return (
     <NavbarComponent>
@@ -49,7 +57,7 @@ export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
         onHandleColor={colors.accent}
         offHandleColor={colors.highlight}
       ></Switch>
-        <Button primary>Login</Button>
+        <Button primary onClick={handleClick}>Login</Button>
       </NavbarButton>
     </NavbarComponent>
   );

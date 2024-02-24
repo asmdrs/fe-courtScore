@@ -27,13 +27,14 @@ interface ButtonProps {
   onClick?: () => void;
   customClass?: string;
   children: React.ReactNode;
+  type?: "button" | "reset" | "submit";
 }
 
-const Button: React.FC<ButtonProps> = ({ primary, onClick, children, customClass }) => {
+const Button: React.FC<ButtonProps> = ({ primary, onClick, children, customClass, type }) => {
   const ButtonComponent = primary ? PrimaryButton : SecondaryButton;
 
   return (
-    <ButtonComponent className={customClass} whileHover={{ scale: 1.1 }} onClick={onClick}>
+    <ButtonComponent type={type} className={customClass} whileHover={{ scale: 1.1 }} onClick={onClick}>
       {children}
     </ButtonComponent>
   );

@@ -18,19 +18,20 @@ export const LoginScreen: React.FC = () => {
       navigate("/dashboard")
     } else {
       // Trate o erro de login inválido
+      //SnackBar
     }
   };
 
   return(
       <LoginContainer>
-        <h2 className="login-container__title">Login</h2>
+        <h2 className="login-container__title">Formulário de Login</h2>
         <FormContainer onSubmit={handleSubmit}>
-          <label>Username</label>
+          <label htmlFor="login-screen-username-input">Username</label>
           <Input text id="login-screen-username-input" 
           name="username" placeholder="username"
           onChange={e => setUsername(e.target.value)}>
           </Input>
-          <label>Password</label>
+          <label htmlFor="login-screen-password-input">Password</label>
           <Input text id="login-screen-password-input" 
           name="password" placeholder="password"
           onChange={e => setPassword(e.target.value)}>

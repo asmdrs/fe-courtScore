@@ -17,8 +17,8 @@ export const LoginScreen: React.FC = () => {
     if (token) {
       navigate("/dashboard")
     } else {
-      // Trate o erro de login inválido
-      //SnackBar
+      //TO-DO SnackBar
+      alert("Dados incorretos");
     }
   };
 

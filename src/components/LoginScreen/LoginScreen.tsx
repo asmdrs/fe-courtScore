@@ -4,12 +4,22 @@ import Input from "../Input"
 import { FormContainer, LoginContainer } from "./styles"
 import Button from "../button";
 import { useNavigate } from "react-router-dom";
+import Toast from "../Toast";
 
 
 export const LoginScreen: React.FC = () => {
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const openToast = (message: string, type: string) => {
+    setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
+  };
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,13 +27,23 @@ export const LoginScreen: React.FC = () => {
     if (token) {
       navigate("/dashboard")
     } else {
-      //TO-DO SnackBar
-      alert("Dados incorretos");
+     openToast("Dados incorretos", "alert");
     }
   };
 
   return(
+    <>
+        {showToast &&(
+          <Toast
+          id="id-login-alert-toast"
+          message={toastMessage}
+          type={toastType}
+          duration={100000}
+          onClose={() => setShowToast(false)}
+          ></Toast>)
+        }
       <LoginContainer>
+
         <h2 className="login-container__title">Formulário de Login</h2>
         <FormContainer onSubmit={handleSubmit}>
           <label htmlFor="login-screen-username-input">Username</label>
@@ -32,14 +52,14 @@ export const LoginScreen: React.FC = () => {
           onChange={e => setUsername(e.target.value)}>
           </Input>
           <label htmlFor="login-screen-password-input">Password</label>
-          <Input text id="login-screen-password-input" 
+          <Input text password id="login-screen-password-input" 
           name="password" placeholder="password"
           onChange={e => setPassword(e.target.value)}>
           </Input>
           <Button type="submit">Login</Button>
         </FormContainer>
       </LoginContainer>
-    
+      </>
   )
 }
 

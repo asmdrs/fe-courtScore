@@ -17,6 +17,7 @@ const NumberInputComponent = styled(TextInputComponent)`
 
 interface InputProps {
   text?: boolean;
+  password?: boolean;
   id: string;
   name: string;
   placeholder: string;
@@ -27,6 +28,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({
   text,
+  password,
   id,
   name,
   children,
@@ -38,7 +40,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <TextInput
-      type="text"
+      type={text && password ? 'password' : 'text'}
       id={id}
       name={name}
       placeholder={placeholder}
